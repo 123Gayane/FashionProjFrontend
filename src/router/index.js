@@ -1,25 +1,82 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import AboutAbout from '@/views/AboutAbout.vue';
+import ContactsCon from '@/views/ContactsCon.vue';
+import ShopShop from '@/views/ShopShop.vue';
+import FashionsFa from '@/views/FashionsFa.vue';
+import HomePage from '@/views/HomePage.vue';
+import CardPage from '@/views/CardPage.vue';
+import FashionFa2 from '@/views/FashionFa2.vue';
+import SignIn from '@/views/SignIn.vue';
+
+// import store from '@/store'
+
 
 const routes = [
   {
-    path: '/',
-    name: 'home',
-    component: HomeView
+    path:"/",
+    component:HomePage,
+    name:"home",
+    // meta: { requiresAuth: true }
+  },
+
+  {
+    path:"/about",
+    component:AboutAbout,
+    name:"about",
+    // meta: { requiresAuth: true }
+  },
+
+  {
+    path:"/contact",
+    component:ContactsCon,
+    name:"contact",
+    // meta: { requiresAuth: true }
+  },
+
+  {
+    path:"/shop",
+    component:ShopShop,
+    name:"shop",
+    // meta: { requiresAuth: true }
+  },
+
+  {
+    path:"/fashion",
+    component:FashionsFa,
+    name:"fashion",
+    // meta: { requiresAuth: true }
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    path:"/card",
+    component:CardPage,
+    name:'card',
+    // meta: { requiresAuth: true }
+  },
+
+  {
+    path:"/fashion2",
+    component:FashionFa2,
+    name:"fashion2"
+  },
+
+  {
+    path:"/signin/admin/",
+    component:SignIn,
+    name:"signin",
+    // meta: { requiresAuth: true }
   }
+
+
 ]
+
+
+
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
 })
+
+
 
 export default router
